@@ -1,8 +1,8 @@
 # RTKWave 🌊
 
-[![License: Apache](https://shields.io)](https://opensource.org)
-[![GitHub Release](https://shields.io)](https://github.com)
-[![Build Status](https://shields.io)](https://github.com)
+![License: Apache 2.0](https://shields.io)
+![Go Version](https://shields.io)
+![Platform](https://shields.io)
 
 > A modern, lightweight, and high-performance RTK management software designed to orchestrate live NTRIP streams, manage base station corrections, and monitor rover telemetry seamlessly.
 
@@ -25,18 +25,17 @@ RTKWave acts as the central control plane for your Real-Time Kinematic operation
 ### Prerequisites
 
 Ensure you have the following environments installed on your machine:
-*   [Go >= 1.20]
+*   **Go** >= 1.20
 *   An active network connection to your NTRIP caster or GNSS hardware receiver.
 
 ### Installation
 
-Clone the repository and install the setup packages:
+Clone the repository and compile the binary:
 
 ```bash
 git clone https://github.com
 cd rtkwave
-# Example for installing dependencies (change based on your stack)
-npm install # or pip install -r requirements.txt or go build
+go build -o rtkwave main.go
 ```
 
 ### Quick Start Configuration
@@ -47,7 +46,7 @@ npm install # or pip install -r requirements.txt or go build
    ```
 2. Open the `.env` file and configure your primary RTK Base Station or NTRIP Caster credentials:
    ```env
-   NTRIP_CASTER_URL=://example.com
+   NTRIP_CASTER_URL=caster.example.com
    NTRIP_PORT=2101
    MOUNTPOINT=BASE01
    USERNAME=your_username
@@ -55,8 +54,7 @@ npm install # or pip install -r requirements.txt or go build
    ```
 3. Run the manager application:
    ```bash
-   # Example execution command
-   npm start # or python main.py or ./rtkwave
+   ./rtkwave
    ```
 
 ---
@@ -66,14 +64,13 @@ npm install # or pip install -r requirements.txt or go build
 You can trigger and check active stream pipes directly via the module or CLI interface:
 
 ```bash
-# Example CLI command structure
-rtkwave connect --mount BASE01 --rover ROVER_A
+./rtkwave connect --mount BASE01 --rover ROVER_A
 ```
 
 *Expected Terminal Output:*
 ```text
 [RTKWave] [INFO] Initializing carrier-wave tracking engine...
-[RTKWave] [INFO] Successfully established link with ://example.com:2101
+[RTKWave] [INFO] Successfully established link with caster.example.com:2101
 [RTKWave] [INFO] Streaming RTCM3 corrections -> ROVER_A [Latency: 42ms]
 ```
 
@@ -109,12 +106,8 @@ Contributions make the open-source community an amazing place to learn, inspire,
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 
 ---
 
-## 📮 Contact
-
-Your Name - [@yourusername](https://github.com) - email@example.com
-
-Project Link: [https://github.com/rtkwave](https://github.com/rtkwave)
+Project Link: [https://github.com](https://github.com)
