@@ -109,5 +109,3 @@ Contributions make the open-source community an amazing place to learn, inspire,
 Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 
 ---
-
-Project Link: [https://github.com](https://github.com)
